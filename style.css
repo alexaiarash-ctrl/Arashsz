@@ -1,0 +1,35 @@
+*{box-sizing:border-box} :root{
+--bg:#06101d;--bg2:#0a1727;--card:rgba(11,25,42,.72);--card2:rgba(255,255,255,.035);
+--text:#f4f6f8;--muted:#8e9aab;--line:rgba(255,255,255,.09);--gold:#c4a86a;--gold2:#8f7745;
+--shadow:0 28px 80px rgba(0,0,0,.38);--radius:28px
+}
+:root[data-theme="light"]{
+--bg:#eef1f4;--bg2:#f8fafb;--card:rgba(255,255,255,.76);--card2:rgba(5,20,35,.035);
+--text:#0a1727;--muted:#667180;--line:rgba(7,17,31,.1);--gold:#9b7b39;--gold2:#b69a5d;
+--shadow:0 24px 70px rgba(16,30,48,.12)
+}
+html{scroll-behavior:smooth}body{margin:0;min-height:100vh;font-family:"Vazirmatn","Inter",sans-serif;background:
+radial-gradient(circle at 15% 0%,rgba(196,168,106,.08),transparent 30%),
+linear-gradient(145deg,var(--bg),var(--bg2));color:var(--text);transition:background .4s,color .4s;overflow-x:hidden}
+body.en{font-family:"Inter","Vazirmatn",sans-serif}
+.noise{position:fixed;inset:0;pointer-events:none;opacity:.025;z-index:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.6'/%3E%3C/svg%3E")}
+.orb{position:fixed;border-radius:50%;filter:blur(85px);pointer-events:none;opacity:.13}.orb-a{width:320px;height:320px;background:var(--gold);top:-140px;right:-100px}.orb-b{width:280px;height:280px;background:#234d79;bottom:-100px;left:-100px}
+.topbar{position:fixed;top:max(18px,env(safe-area-inset-top));left:0;right:0;z-index:10;max-width:760px;margin:auto;padding:0 22px;display:flex;justify-content:space-between;direction:ltr}
+.mini-btn{height:42px;min-width:42px;border:1px solid var(--line);background:color-mix(in srgb,var(--card) 88%,transparent);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);color:var(--text);border-radius:14px;padding:0 13px;font:600 12px "Inter";cursor:pointer;box-shadow:0 8px 28px rgba(0,0,0,.08)}
+.icon-btn{padding:10px}.icon-btn svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}.moon{display:none}:root[data-theme="light"] .sun{display:none}:root[data-theme="light"] .moon{display:block}
+.shell{position:relative;z-index:1;width:min(100% - 28px,660px);margin:0 auto;padding:92px 0 36px}
+.card{border:1px solid var(--line);background:linear-gradient(145deg,var(--card),var(--card2));backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border-radius:var(--radius);box-shadow:var(--shadow)}
+.hero{position:relative;overflow:hidden;text-align:center;padding:42px 28px 28px}
+.hero:before{content:"";position:absolute;inset:0;border-radius:inherit;padding:1px;background:linear-gradient(135deg,rgba(196,168,106,.38),transparent 30%,transparent 70%,rgba(196,168,106,.12));-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none}
+.lion-sun-watermark{position:absolute;left:50%;top:18px;transform:translateX(-50%);width:320px;height:320px;object-fit:contain;opacity:.105;pointer-events:none;filter:drop-shadow(0 0 18px rgba(196,168,106,.12));user-select:none}
+.photo-wrap{position:relative;width:132px;height:132px;margin:0 auto 22px}.profile{width:100%;height:100%;object-fit:cover;border-radius:50%;border:2px solid rgba(196,168,106,.58);padding:4px;background:var(--bg);box-shadow:0 14px 45px rgba(0,0,0,.3)}
+.status-dot{position:absolute;right:10px;bottom:9px;width:15px;height:15px;background:#4bc27a;border:3px solid var(--bg);border-radius:50%}
+.identity{position:relative}.eyebrow{color:var(--gold);font:600 10px "Inter","Vazirmatn";letter-spacing:2.5px;margin:0 0 7px}.identity h1{font-size:clamp(29px,7vw,42px);margin:0 0 26px;font-weight:700;letter-spacing:-.7px}
+.socials{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;direction:ltr}.social{text-decoration:none;color:var(--text);border:1px solid var(--line);background:rgba(255,255,255,.025);border-radius:18px;padding:14px 7px 11px;display:flex;align-items:center;flex-direction:column;gap:5px;transition:.25s ease;min-width:0}.social:hover{transform:translateY(-4px);border-color:color-mix(in srgb,var(--gold) 45%,var(--line));background:rgba(196,168,106,.06)}.social svg{width:23px;height:23px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}.telegram svg,.whatsapp svg{fill:currentColor;stroke:none}.social span{font-size:11px;font-weight:600;white-space:nowrap}.social small{font:500 9px "Inter";color:var(--muted);max-width:100%;overflow:hidden;text-overflow:ellipsis}
+.actions{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:20px}.actions a,.actions button{height:52px;border-radius:16px;font-family:inherit;font-weight:600;font-size:13px;display:flex;align-items:center;justify-content:center;gap:8px;cursor:pointer;text-decoration:none}.actions svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}.primary{background:var(--gold);color:#0a111b;border:0}.secondary{background:transparent;color:var(--text);border:1px solid var(--line)}
+.contact-card,.clock-card{margin-top:14px;padding:22px}.section-title{display:flex;align-items:center;gap:12px;color:var(--muted);font-size:11px;margin-bottom:8px}.section-title .line{height:1px;background:var(--line);flex:1}.contact-row{display:flex;justify-content:space-between;align-items:center;text-decoration:none;color:var(--text);padding:14px 0;border-bottom:1px solid var(--line)}.contact-row:last-child{border-bottom:0;padding-bottom:2px}.label{color:var(--muted);font-size:11px}.contact-row b{font:600 14px "Inter";letter-spacing:.4px}
+.clock-card{display:flex;justify-content:space-between;align-items:flex-end}.clock-card #time{font:600 clamp(28px,8vw,40px) "Inter";letter-spacing:-1px;margin-top:4px}.clock-card #date{color:var(--gold);font-size:12px;text-align:left;max-width:45%}
+footer{display:flex;justify-content:center;align-items:center;gap:9px;color:var(--muted);font:500 9px "Inter","Vazirmatn";letter-spacing:1.2px;padding:24px 0 0}footer i{width:3px;height:3px;border-radius:50%;background:var(--gold)}
+.toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,20px);opacity:0;z-index:20;background:var(--text);color:var(--bg);padding:10px 16px;border-radius:12px;font-size:12px;transition:.3s;pointer-events:none}.toast.show{opacity:1;transform:translate(-50%,0)}
+@media(max-width:520px){.shell{width:min(100% - 20px,660px);padding-top:80px}.hero{padding:35px 16px 20px}.socials{grid-template-columns:repeat(2,1fr)}.social{padding:13px 8px}.lion-sun-watermark{width:270px;height:270px}.actions{grid-template-columns:1fr}.contact-card,.clock-card{padding:18px}.topbar{padding:0 14px}.photo-wrap{width:122px;height:122px}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
